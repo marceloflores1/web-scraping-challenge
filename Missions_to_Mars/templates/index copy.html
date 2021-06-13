@@ -28,25 +28,8 @@
             <img src="{{ mars_data.featured_image_url }}" class="img-fluid" alt="Featured">
         </div>
         <div class="col-6">
-            <h4>Mars Facts</h4>
-            <table class="table table-hover">
-                <thead>
-                  <tr class="h5">
-                    {% for header in mars_data.facts_headers %}
-                    <th scope="col">{{ header }}</th>
-                    {% endfor %}
-                  </tr>
-                </thead>
-                <tbody>
-                  {% for row in mars_data.facts_rows %}
-                  <tr>
-                    {% for cell in row %}
-                    <td>{{ cell }}</td>
-                    {% endfor %}
-                  </tr>
-                  {% endfor %}
-                </tbody>
-              </table>
+            <h5>Mars Facts</h5>
+            {{ mars_data.html_mars_facts }}
         </div>
     </div>
     <br>

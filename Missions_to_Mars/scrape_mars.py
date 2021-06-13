@@ -39,11 +39,11 @@ def scrape():
     url = 'https://galaxyfacts-mars.com/'
     tables = pd.read_html(url)
     mars_table = tables[0]
-    mars_table = mars_table.set_index([0])
-    mars_facts = mars_table[1:]
-    mars_facts.columns = mars_table.iloc[0]
-    mars_facts.index.name = ""
-    html_mars_facts = mars_facts.to_html().replace("\n","")    
+    facts_rows = []
+    for index, row in mars_table.iterrows():
+        facts_rows.append(row.tolist())
+    facts_headers = facts_rows[0]
+    facts_rows = facts_rows[1:]
 
     ### Mars Hemispheres
     # Defining url and visiting link
@@ -84,7 +84,8 @@ def scrape():
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": featured_image_url,
-        "html_mars_facts": html_mars_facts,
+        "facts_headers": facts_headers,
+        "facts_rows": facts_rows,
         "hemisphere_image_urls": hemisphere_image_urls
     }
 
