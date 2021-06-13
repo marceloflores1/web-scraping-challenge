@@ -102,10 +102,8 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 To submit your work to BootCampSpot, create a new GitHub repository and upload the following:
 
-1. The Jupyter Notebook containing the scraping code used.
+1. The Jupyter Notebook containing the scraping code used. (Missions_to_Mars/mission_to_mars.ipynb)
 
-2. Screenshots of your final application.
+2. Screenshots of your final application. (Images/final_app_marcelo.png)
+![final_app_marcelo.png](Images/final_app_marcelo.png)
 
-3. Submit the link to your new repository to BootCampSpot.
-
-4. Ensure your repository has regular commits (i.e. 20+ commits) and a thorough README.md file
