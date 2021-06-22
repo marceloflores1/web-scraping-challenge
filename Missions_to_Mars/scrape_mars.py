@@ -44,6 +44,12 @@ def scrape():
         facts_rows.append(row.tolist())
     facts_headers = facts_rows[0]
     facts_rows = facts_rows[1:]
+    # Adding to_html code
+    mars_table = mars_table.set_index([0])
+    mars_facts = mars_table[1:]
+    mars_facts.columns = mars_table.iloc[0]
+    mars_facts.index.name = ""
+    html_mars_facts = mars_facts.to_html().replace("\n","")  
 
     ### Mars Hemispheres
     # Defining url and visiting link
@@ -86,7 +92,8 @@ def scrape():
         "featured_image_url": featured_image_url,
         "facts_headers": facts_headers,
         "facts_rows": facts_rows,
-        "hemisphere_image_urls": hemisphere_image_urls
+        "hemisphere_image_urls": hemisphere_image_urls,
+        "html_mars_facts": html_mars_facts
     }
 
     # Close the browser after scraping

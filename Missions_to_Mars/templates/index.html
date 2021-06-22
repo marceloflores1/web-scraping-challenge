@@ -28,6 +28,10 @@
             <img src="{{ mars_data.featured_image_url }}" class="img-fluid" alt="Featured">
         </div>
         <div class="col-6">
+          <h4 class="greet">Mars Facts</h4>
+          {{ mars_data.html_mars_facts | safe }}
+        </div>
+<!--          <div class="col-6">
             <h4 class="greet">Mars Facts</h4>
             <table class="table table-hover">
                 <thead>
@@ -48,7 +52,7 @@
                 </tbody>
               </table>
         </div>
-    </div>
+-->    </div>
     <br>
     <h3 class="greet text-center">Mars Hemispheres</h3>
     <hr class="horizontal">
